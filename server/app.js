@@ -76,10 +76,13 @@ app.get('/', function (req, res) {
 
 app.use('/api', apiRouter);
 
+app.get('/user',(req, res)=>{
+    res.send('Hello, User');
+})
+
+
+
 app.use((req, res, next) => { 
     res.status(404).send('Not Found');
 });
 
-app.get('/user',(req, res)=>{
-    res.send('Hello, User');
-})
